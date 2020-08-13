@@ -19,7 +19,8 @@ var auth_indexRoutes = require("./routes/auth_index"),
 
 //===============Mongoose require Setup=================
 
-mongoose.connect('mongodb://localhost:27017/yelp_camp_v10', {
+// mongoose.connect('mongodb://localhost:27017/yelp_camp_v10', {
+mongoose.connect('mongodb+srv://azfar-ahmed:aakm+1988@cluster0.jdja3.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
