@@ -67,7 +67,7 @@ app.use("/campgrounds/:id/comments",commentRoutes);
 
 
 var PORT = process.env.PORT || 3000;
-app.listen("PORT", function(){
+app.listen(PORT, function(){
 	console.log("Server is connected!!!");
 });
 
