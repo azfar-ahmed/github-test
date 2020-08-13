@@ -66,14 +66,17 @@ app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
 
-
-
-
-
-		// For listen app
-app.listen(3000, function(){
-	console.log("server is connected!!!");
+var PORT = process.env.PORT || 3000;
+app.listen("PORT", function(){
+	console.log("Server is connected!!!");
 });
+
+
+
+// 		// For listen app
+// app.listen(3000, function(){
+// 	console.log("server is connected!!!");
+// });
 
 
 
