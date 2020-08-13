@@ -19,13 +19,15 @@ var auth_indexRoutes = require("./routes/auth_index"),
 
 //===============Mongoose require Setup=================
 
-// mongoose.connect('mongodb://localhost:27017/yelp_camp_v10', {
-mongoose.connect('mongodb+srv://azfar-ahmed:aakm+1988@cluster0.jdja3.mongodb.net/<dbname>?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASEURL, {
+// FOR "MONGODB ATLAS" USE THIS BY COPY THIS LINK FROM "CONNECT" ON MONGODB ATLAS 
+// mongoose.connect('mongodb+srv://azfar-ahmed:aakm+1988@cluster0.jdja3.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
 .then(() => console.log('Connected to DB!'))
 .catch(error => console.log(error.message));
+
 //=======================================================
 
 		// Body Parser and EJS use in file 
@@ -66,6 +68,7 @@ app.use("/campgrounds",campgroundRoutes);
 app.use("/campgrounds/:id/comments",commentRoutes);
 
 
+// FOR HEROKU USE THIS METHOD OTHERWISE USE BELOW ONE
 var PORT = process.env.PORT || 3000;
 app.listen(PORT, function(){
 	console.log("Server is connected!!!");
