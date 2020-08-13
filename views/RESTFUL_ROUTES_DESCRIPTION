@@ -1,0 +1,14 @@
+RESTFUL ROUTES DESCRIPTION (All 7 RESTful Routes) with MONGOOSE
+==============================================================================================================================================
+Name 			Path/url 	       HTTP verb 	    Purpose/description                              			Mongoose Method
+===============================================================================================================================================
+INDEX      	/campgrounds 	 	 	/GET		Display a list of all campgrounds 								campgrounds.find()
+NEW			/campgrounds/new 	 	/GET		Display form to make a new campground									N/A
+CREATE 		/campgrounds		 	/POST		Add new campground to DB										campgrounds.create()
+SHOW 		/campgrounds/:id 	 	/GET		Show info about One Campground									campgrounds.findById()
+EDIT		/campgrounds/:id/edit 	/GET 	    Show edit form for One Campground								campgrounds.findById()
+UPDATE		/campgrounds/:id	  	/PUT 		Update a particular campground, then redirect somewhere			campgrounds.findByIdAndUpdate()
+DESTROY		/campgrounds/:id	  	/DELETE		Delete a particular campground, then redirect somewhere			campgrounds.findByIdAndRemove()
+
+
+

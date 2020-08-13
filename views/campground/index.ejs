@@ -1,0 +1,33 @@
+<%- include("../partials/header") %>
+
+
+<div class="container">
+					<!-- it is jumbotron-->
+	<header class="jumbotron">
+	<h1> THIS IS CAMPGROUNDS PAGE</h1>
+		<p> view all the Amazing camping sites around the World </p>
+		<p> <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new Campground</a> 		</p>
+	</header>
+
+		
+				<!-- it is Grid -->
+	<div class="row text-center" style="display:flex: flex-wrap:wrap";>
+		<% campgrounds.forEach(function(campground){ %>
+		<div class="col-md-3 col-sm-6">
+			<div class="thumbnail"> 
+				<img src="<%=campground.image %>">
+				<div class="caption">
+					<h4><%= campground.name%> </h4>
+				</div>
+					<p>
+						<a href="/campgrounds/<%=campground._id %>" class="btn btn-primary">More Info</a>
+						
+					</p>
+			</div>
+		</div>
+		<% }); %>
+	</div>
+
+</div>
+	<%- include("../partials/footer") %>
+	
