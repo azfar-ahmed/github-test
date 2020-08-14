@@ -19,7 +19,9 @@ var auth_indexRoutes = require("./routes/auth_index"),
 
 //===============Mongoose require Setup=================
 
-mongoose.connect(process.env.DATABASEURL, {
+// By using this DATABASEURL we can use locally and HEROKU server as well as we added DATABASEURL (Environment Variable) there.
+var url = process.env.DATABASEURL || 'mongodb://localhost:27017/yelp_camp_v10'
+mongoose.connect(url, {
 // FOR "MONGODB ATLAS" USE THIS BY COPY THIS LINK FROM "CONNECT" ON MONGODB ATLAS 
 // mongoose.connect('mongodb+srv://azfar-ahmed:aakm+1988@cluster0.jdja3.mongodb.net/<dbname>?retryWrites=true&w=majority', {
   useNewUrlParser: true,
